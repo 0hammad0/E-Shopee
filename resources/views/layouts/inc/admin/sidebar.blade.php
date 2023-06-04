@@ -30,15 +30,15 @@
             </a>
             <div class="collapse" id="product">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ route('brand') }}">View product</a></li>
-                    <li class="nav-item"> <a class="nav-link " href="">Add
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('product') }}">View product</a></li>
+                    <li class="nav-item"> <a class="nav-link " href="{{ route('product.create') }}">Add
                             product</a>
                     </li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="{{ route('brand') }}">
                 <i class="mdi mdi-chart-pie menu-icon"></i>
                 <span class="menu-title">Brands</span>
             </a>

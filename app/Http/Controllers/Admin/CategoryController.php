@@ -1,18 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use Exception;
-use Throwable;
-use App\Models\Category;
-use Illuminate\Support\Str;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\CategoryFormRequest;
+use App\Models\Category;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
-{
-    public function index()
+{public function index()
     {
         return view('admin.category.index');
     }
@@ -103,10 +101,5 @@ class CategoryController extends Controller
             return redirect()->back()->with('error', 'somthing went wrong');
         }
         return redirect(route('category'))->with('message', 'Category updated successfully');
-    }
-
-    public function delete(Category $category)
-    {
-        dd ($category);
     }
 }
