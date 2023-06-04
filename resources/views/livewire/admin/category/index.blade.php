@@ -46,12 +46,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <input type="hidden" value="{{ $i = 1 }}">
-                                @foreach ($categories as $category)
+                                @forelse ($categories as $category)
                                     <tr>
-                                        <td>{{ $i }}</td>
+                                        <td>{{ $loop->iteration + ($categories->currentPage() - 1) * $categories->perPage() }}
                                         <td>{{ $category->name }}</td>
-                                        <td>{{ $category->status == '1' ? 'Active' : 'Deactive' }}</td>
+                                        <td class="{{ $category->status == '1' ? 'text-success' : 'text-danger' }}">
+                                            {{ $category->status == '1' ? 'Active' : 'Deactive' }}</td>
                                         <td><a href="{{ url('admin/category/' . $category->id . '/edit') }}"
                                                 class="btn btn-primary btn-rounded btn-sm text-white">Edit</a>
                                             <a href="#" wire:click="deleteCatagory({{ $category->id }})"
@@ -59,8 +59,11 @@
                                                 data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
                                         </td>
                                     </tr>
-                                    <input type="hidden" value="{{ $i += 1 }}">
-                                @endforeach
+                                @empty
+                                    <tr>
+                                        <td colspan="5" class="text-center">No Brand Found</td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
                         <div>

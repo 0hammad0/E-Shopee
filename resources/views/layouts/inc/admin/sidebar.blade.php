@@ -7,31 +7,40 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('category') }}">
-                <i class="mdi mdi-circle-outline menu-icon"></i>
+            <a class="nav-link" data-bs-toggle="collapse" href="#category" aria-expanded="false"
+                aria-controls="ui-basic">
+                <i class="mdi mdi-format-list-bulleted menu-icon"></i>
                 <span class="menu-title">Category</span>
+                <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="collapse" id="category">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('category') }}">View category</a></li>
+                    <li class="nav-item"> <a class="nav-link " href="{{ route('category.create') }}">Add
+                            cateogry</a>
                     </li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-                <i class="mdi mdi-view-headline menu-icon"></i>
-                <span class="menu-title">Form elements</span>
+            <a class="nav-link" data-bs-toggle="collapse" href="#product" aria-expanded="false" aria-controls="product">
+                <i class="mdi mdi-plus-circle menu-icon"></i>
+                <span class="menu-title">Product</span>
+                <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="product">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('brand') }}">View product</a></li>
+                    <li class="nav-item"> <a class="nav-link " href="">Add
+                            product</a>
+                    </li>
+                </ul>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
                 <i class="mdi mdi-chart-pie menu-icon"></i>
-                <span class="menu-title">Charts</span>
+                <span class="menu-title">Brands</span>
             </a>
         </li>
         <li class="nav-item">

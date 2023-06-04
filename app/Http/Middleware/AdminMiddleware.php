@@ -18,7 +18,7 @@ class AdminMiddleware
     {
         if (!Auth::user()->role_as == "1")
         {
-            return redirect('/home')->with('status', 'Only admins can access');
+            return redirect('/home')->with('error', 'Only admins can access');
         }
         return $next($request);
     }

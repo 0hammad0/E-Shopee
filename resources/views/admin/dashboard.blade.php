@@ -10,10 +10,6 @@
                         @if (Session('message'))
                             <h2 class="alert alert-success">{{ Session('message') }}</h2>
                         @endif
-                        <p class="mb-md-0">
-                            Your analytics dashboard
-                            template.
-                        </p>
                     </div>
                     <div class="d-flex">
                         <i class="mdi mdi-home text-muted hover-cursor"></i>

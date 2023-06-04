@@ -22,6 +22,9 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function (){
         Route::PUT('/category/{category}', 'update')->name('category.update');
         Route::DELETE('/category/{category}/delete', 'delete')->name('category.delete');
     });
+
+    // Brands Routes
+    Route::get('/brands', App\Http\Livewire\Admin\Brand\Index::class)->name('brand');
 });
 
 Auth::routes();

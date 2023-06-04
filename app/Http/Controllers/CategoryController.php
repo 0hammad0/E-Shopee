@@ -50,7 +50,7 @@ class CategoryController extends Controller
         try{
             $category->save();
         }
-        catch(Exception $e) {
+        catch(\Exception $e) {
             report($e);
             return redirect()->back()->with('error', 'somthing went wrong');
         }
@@ -98,7 +98,7 @@ class CategoryController extends Controller
         try{
             $category->update();
         }
-        catch(Exception $e) {
+        catch(\Exception $e) {
             report($e);
             return redirect()->back()->with('error', 'somthing went wrong');
         }
